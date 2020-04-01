@@ -21,7 +21,7 @@ export const startDoc = ()=>{
 export const getAllData =()=>{
     return dispatch => {
         dispatch(startDoc());
-        axios.get('/documentation')
+        axios.get('https://api.myjson.com/bins/a2os0')
             .then((response)=> response)
             .then((resp) => {
                 setTimeout(()=>{
@@ -34,7 +34,7 @@ export const getAllData =()=>{
 };
 export const getDatabyId =(id)=>{
     return dispatch => {
-        axios.get(`/documentation/${id}`)
+        axios.get(`https://api.myjson.com/bins/a2os0/${id}`)
             .then((response)=> response)
             .then((resp) => {
                 dispatch(
