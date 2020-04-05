@@ -19,14 +19,15 @@ export const startDoc = ()=>{
     }
 };
 export const getAllData =()=>{
+    const config = { headers: { 'secret-key': "$2b$10$NfZU0w/DO7gMErvd6qf2nuVIygkK3zKiQQ9Mk3pxh7TmPSWnnesLe" } };
     return dispatch => {
         dispatch(startDoc());
-        axios.get('https://api.myjson.com/bins/a2os0')
+        axios.get('https://api.jsonbin.io/b/5e8412d789951677087222fb',config)
             .then((response)=> response)
             .then((resp) => {
                 setTimeout(()=>{
                     dispatch(
-                        setData(resp.data)
+                        setData(resp.data.documentation)
                     )
                 }, 1000)
             });
